@@ -5,10 +5,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 
+import { AdminGuard } from './admin.guard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 ];
