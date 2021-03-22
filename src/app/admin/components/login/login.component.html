@@ -12,6 +12,10 @@
                         </div>
                         <p class="login-card-description">Sign into your account</p>
                         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+                            <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                                Login failed: {{ errorMessage }}
+                            </div>
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
                                 <input type="email" name="email" id="email" name="email" [(ngModel)]="form.email" required #email="ngModel" class="form-control" placeholder="Email address">
@@ -30,11 +34,7 @@
                                 </div>
                             </div>
                             <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
-                            <div class="form-group">
-                                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-                                    Login failed: {{ errorMessage }}
-                                </div>
-                            </div>
+
                         </form>
                         <div class="alert alert-success" *ngIf="isLoggedIn">
                             Logged in as {{ roles }}.

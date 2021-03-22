@@ -25,13 +25,12 @@ export class RegisterComponent implements OnInit {
     this.form["role"] = ["admin"];
 
     this.authService.register(this.form).subscribe(
-      data => {
-        console.log(data);
+      data => {        
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },
-      err => {
-        this.errorMessage = err.error.message;
+      err => {        
+        this.errorMessage = err.error;
         this.isSignUpFailed = true;
       }
     );
