@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { HomeComponent } from './home/home.component';
 // import { ContactComponent } from './contact/contact.component';
@@ -30,7 +31,8 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     AppRoutingModule,
     AdminModule,
-    UserModule
+    UserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
