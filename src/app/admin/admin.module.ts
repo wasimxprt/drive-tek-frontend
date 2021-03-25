@@ -12,16 +12,22 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { DefaultModule } from './layouts/default/default.module';
+import { UsersComponent } from './modules/users/users.component';
+import { VehicleComponent } from './modules/vehicle/vehicle.component';
+import { CourseComponent } from './modules/course/course.component';
+import { DataService } from './_services/data/data.service';
 
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, HomeComponent, RegisterComponent],
+  declarations: [LoginComponent, DashboardComponent, HomeComponent, RegisterComponent, UsersComponent, VehicleComponent, CourseComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DefaultModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders,DataService],
 })
 export class AdminModule { }
