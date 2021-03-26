@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-// import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HomeComponent } from './components/home/home.component';
-import { RegisterComponent } from './components/register/register.component';
+
 
 import { AdminGuard } from './admin.guard';
 import { DefaultComponent } from './layouts/default/default.component';
@@ -12,12 +9,16 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { UsersComponent } from './modules/users/users.component';
 import { VehicleComponent } from './modules/vehicle/vehicle.component';
 import { CourseComponent } from './modules/course/course.component';
+import { LoginLayoutComponent } from './layouts/loginlayout/loginlayout/loginlayout.component';
+import { LoginComponent } from './modules/login/login.component';
+import { RegisterComponent } from './modules/register/register.component';
 
 
 const routes: Routes = [
   {
     path: "",
     component: DefaultComponent,
+    // canActivate: [AuthGuard],
     children: [{
       path: "dashboard",
       component: DashboardComponent,
@@ -33,17 +34,19 @@ const routes: Routes = [
       path: "course",
       component: CourseComponent
     }]
+  },
+  {
+    path: "admin",
+    component: LoginLayoutComponent,
+    children: [{
+      path: "login",
+      component: LoginComponent,
+    }, {
+      path: "register",
+      component: RegisterComponent,
+    }]
   }
 ];
-
-// const routes: Routes = [
-//   { path: '', redirectTo: 'login', pathMatch: 'full' },
-//   {
-//     path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]
-//   },
-//   { path: 'login', component: LoginComponent },
-//   { path: 'register', component: RegisterComponent },
-// ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
