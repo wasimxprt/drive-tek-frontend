@@ -1,14 +1,20 @@
 <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
         <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
+            <img src="../../../../assets/img/logo.jpg" alt="logo" class="logo-img">
+            <h1 class="MuiTypography-h5">SIGN UP</h1>
         </mat-card-header>
 
         <form class="example-form">
 
             <mat-card-content>
+
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Username">
+                    <input matInput placeholder="First Name">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Last Name">
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
@@ -20,7 +26,7 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label>Choose designation</mat-label>
+                    <mat-label>Choose Role</mat-label>
                     <mat-select>
                         <mat-option [value]="user" *ngFor="let user of User">{{user}}
                         </mat-option>
@@ -29,8 +35,12 @@
 
             </mat-card-content>
 
-            <button mat-stroked-button color="accent" class="btn-block">Register</button>
+            <button mat-raised-button color="accent">SUBMIT</button>
 
         </form>
+
+        <div class="divider"></div>
+
+        <a routerLink="/admin/login">CLICK HERE TO LOGIN</a>
     </mat-card>
 </div>

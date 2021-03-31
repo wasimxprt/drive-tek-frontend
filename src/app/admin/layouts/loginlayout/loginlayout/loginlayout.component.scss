@@ -1,3 +1,7 @@
+body {
+    background-color: #eee !important;
+}
+
 :host {
     display: flex;
     flex-direction: column;
@@ -10,4 +14,101 @@ mat-drawer {
 
 mat-drawer-container {
     height: 100%;
+}
+
+.main-wrapper {
+    background-color: #eee;
+    height: 100%;
+}
+
+.positronx {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.box {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 60px 50px 40px 50px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 430px;
+    .logo-img {
+        width: 250px;
+    }
+    .divider {
+        border-top: 1px solid rgba(34, 36, 38, .15);
+        border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+        margin: 15px 0 15px 0;
+    }
+    a {
+        text-decoration: none;
+        color: #4183c4;
+        font-weight: 500;
+    }
+}
+
+.box.back {
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    top: -20px;
+    opacity: .8;
+    z-index: -1;
+}
+
+.main-wrapper .example-form {
+    min-width: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+
+.main-wrapper .example-full-width,
+.main-wrapper .btn-block {
+    width: 100%;
+}
+
+.main-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+}
+
+.main-wrapper mat-card-header mat-card-title {
+    font-size: 30px;
+    margin: 0;
+}
+
+.main-wrapper .mat-card {
+    padding: 75px 50px 55px;
+}
+
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+    background-color: #ff4081;
+    width: 100%;
+    color: #FFF;
+    margin: 15px 0;
+}
+
+.main-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.8375em 0;
+}
+
+.MuiTypography-h5 {
+    color: #999;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 2.25em im !important;
 }
