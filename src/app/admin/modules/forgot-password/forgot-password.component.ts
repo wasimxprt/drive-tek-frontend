@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
   styleUrls: ['../../layouts/loginlayout/loginlayout/loginlayout.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
+
   myForm: FormGroup;
+  hide = true;
 
-  User: any = ['Super Admin', 'Admin', 'Moderator'];
-
-  constructor(public fb: FormBuilder) { }
+  constructor(private router: Router, public fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.reactiveForm()
@@ -20,11 +21,7 @@ export class RegisterComponent implements OnInit {
   /* Reactive form */
   reactiveForm() {
     this.myForm = this.fb.group({
-      fname: ['', [Validators.required]],
-      lname: ['', [Validators.required]],
-      email: ['', [Validators.required,Validators.email]],
-      password: ['', [Validators.required]],
-      role: ['', [Validators.required]]
+      email: ['', [Validators.required,Validators.email]]      
     })
   }
 
@@ -38,6 +35,3 @@ export class RegisterComponent implements OnInit {
   }
 
 }
-
-
-

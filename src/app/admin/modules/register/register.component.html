@@ -5,32 +5,53 @@
             <h1 class="MuiTypography-h5">SIGN UP</h1>
         </mat-card-header>
 
-        <form class="example-form">
+        <form class="register-form" [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
 
             <mat-card-content>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="First Name">
+                    <input matInput placeholder="First Name" formControlName="fname">
+
+                    <mat-error *ngIf="errorHandling('fname', 'required')">
+                        You must provide <strong>First name</strong>
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Last Name">
+                    <input matInput placeholder="Last Name" formControlName="fname">
+
+                    <mat-error *ngIf="errorHandling('lname', 'required')">
+                        You must provide <strong>Last name</strong>
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email">
+                    <input matInput placeholder="Email" formControlName="email">
+
+                    <mat-error *ngIf="errorHandling('email', 'required')">
+                        You must provide <strong>Email</strong>
+                    </mat-error>
+                    <mat-error *ngIf="errorHandling('email', 'email')">
+                        You must provide a valid <strong>Email</strong>
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" formControlName="password">
+                    <mat-error *ngIf="errorHandling('email', 'required')">
+                        You must provide <strong>Password</strong>
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Choose Role</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="role">
                         <mat-option [value]="user" *ngFor="let user of User">{{user}}
                         </mat-option>
                     </mat-select>
+                    <mat-error *ngIf="errorHandling('role', 'required')">
+                        You must select a <strong>Role</strong>
+                    </mat-error>
                 </mat-form-field>
 
             </mat-card-content>

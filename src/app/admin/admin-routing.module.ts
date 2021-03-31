@@ -12,6 +12,7 @@ import { CourseComponent } from './modules/course/course.component';
 import { LoginLayoutComponent } from './layouts/loginlayout/loginlayout/loginlayout.component';
 import { LoginComponent } from './modules/login/login.component';
 import { RegisterComponent } from './modules/register/register.component';
+import { ForgotPasswordComponent } from './modules/forgot-password/forgot-password.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,9 @@ const routes: Routes = [
     }, {
       path: "register",
       component: RegisterComponent,
+    }, {
+      path: "forgot-password",
+      component: ForgotPasswordComponent,
     }]
   }
 ];
