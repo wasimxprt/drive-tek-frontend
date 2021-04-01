@@ -7,7 +7,13 @@
             <h1 class="MuiTypography-h5">SIGN IN</h1>
         </mat-card-header>
 
-        <form class="example-form" [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
+        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+
+            <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && isLoginFailed">
+                Login failed: {{ errorMessage }}
+            </div>
+
+
             <mat-card-content>
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="Email" formControlName="email">
@@ -35,7 +41,7 @@
 
             </mat-card-content>
             <a routerLink="/admin/forgot-password">FORGOT PASSWORD ?</a>
-            <button mat-raised-button color="accent">SUBMIT</button>
+            <button mat-raised-button color="accent" [class.spinner]="loading" [disabled]="loading">SUBMIT</button>
         </form>
 
         <div class="divider"></div>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { TokenStorageService } from '../../../_services/token-storage/token-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit() { }
 
@@ -20,5 +22,15 @@ export class HeaderComponent implements OnInit {
         new Event('resize')
       );
     }, 300);
+  }
+
+  profile() {
+
+    this.router.navigate(['/admin/profile']);
+  }
+
+  logout() {
+    this.tokenStorage.signOut();
+    this.router.navigate(['/admin/login']);
   }
 }

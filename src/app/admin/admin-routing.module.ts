@@ -13,27 +13,35 @@ import { LoginLayoutComponent } from './layouts/loginlayout/loginlayout/loginlay
 import { LoginComponent } from './modules/login/login.component';
 import { RegisterComponent } from './modules/register/register.component';
 import { ForgotPasswordComponent } from './modules/forgot-password/forgot-password.component';
+import { ProfileComponent } from './modules/profile/profile.component';
 
 
 const routes: Routes = [
   {
     path: "",
-    component: DefaultComponent,
-    // canActivate: [AuthGuard],
+    component: DefaultComponent,    
     children: [{
       path: "dashboard",
       component: DashboardComponent,
+      canActivate: [AdminGuard]
     }, {
       path: "users",
-      component: UsersComponent
+      component: UsersComponent,
+      canActivate: [AdminGuard]
     },
     {
       path: "vehicle",
-      component: VehicleComponent
+      component: VehicleComponent,
+      canActivate: [AdminGuard]
     },
     {
       path: "course",
-      component: CourseComponent
+      component: CourseComponent,
+      canActivate: [AdminGuard]
+    },{
+      path: "profile",
+      component: ProfileComponent,
+      canActivate: [AdminGuard]
     }]
   },
   {
