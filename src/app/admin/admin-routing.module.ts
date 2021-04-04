@@ -14,6 +14,7 @@ import { LoginComponent } from './modules/login/login.component';
 import { RegisterComponent } from './modules/register/register.component';
 import { ForgotPasswordComponent } from './modules/forgot-password/forgot-password.component';
 import { ProfileComponent } from './modules/profile/profile.component';
+import { BrandComponent } from './modules/brand/brand.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,11 @@ const routes: Routes = [
     },{
       path: "profile",
       component: ProfileComponent,
+      canActivate: [AdminGuard]
+    },
+    {
+      path: "brand",
+      component: BrandComponent,
       canActivate: [AdminGuard]
     }]
   },

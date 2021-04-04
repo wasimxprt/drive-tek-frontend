@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,9 +14,11 @@ import { CourseComponent } from './modules/course/course.component';
 import { DataService } from './_services/data/data.service';
 import { LoginlayoutModule } from './layouts/loginlayout/loginlayout/loginlayout.module';
 
+import { BrandService } from './_services/brand/brand.service';
+
 
 @NgModule({
-  declarations: [UsersComponent, VehicleComponent, CourseComponent],
+  declarations: [],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -27,6 +28,6 @@ import { LoginlayoutModule } from './layouts/loginlayout/loginlayout/loginlayout
     DefaultModule,
     LoginlayoutModule
   ],
-  providers: [authInterceptorProviders, DataService]
+  providers: [authInterceptorProviders, DataService, BrandService]
 })
 export class AdminModule { }

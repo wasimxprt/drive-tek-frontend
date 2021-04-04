@@ -1,26 +1,24 @@
-import { NgModule } from '@angular/core';
+import { AngularMaterialModule } from '../../angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from '../../modules/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from '../../modules/posts/posts.component';
 import { SharedModule } from '../../shared/shared.module';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTableModule } from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { VehicleComponent } from '../../modules/vehicle/vehicle.component';
+import { BrandComponent } from '../../modules/brand/brand.component';
 
 
 @NgModule({
-  declarations: [DefaultComponent, DashboardComponent, PostsComponent],
+  declarations: [DefaultComponent, DashboardComponent, PostsComponent,VehicleComponent, BrandComponent],
   imports: [
     CommonModule,
     RouterModule,
     SharedModule,
-    MatSidenavModule,
-    MatTableModule,
-    MatCardModule,
-    MatIconModule
+    AngularMaterialModule,
+    FlexLayoutModule
   ]
 })
 export class DefaultModule { }
