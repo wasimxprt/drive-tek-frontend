@@ -15,12 +15,14 @@ import { RegisterComponent } from './modules/register/register.component';
 import { ForgotPasswordComponent } from './modules/forgot-password/forgot-password.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { BrandComponent } from './modules/brand/brand.component';
+import { AddBrandComponent } from './modules/brand/add-brand/add-brand.component';
+import { EditBrandComponent } from './modules/brand/edit-brand/edit-brand.component';
 
 
 const routes: Routes = [
   {
     path: "",
-    component: DefaultComponent,    
+    component: DefaultComponent,
     children: [{
       path: "dashboard",
       component: DashboardComponent,
@@ -39,7 +41,7 @@ const routes: Routes = [
       path: "course",
       component: CourseComponent,
       canActivate: [AdminGuard]
-    },{
+    }, {
       path: "profile",
       component: ProfileComponent,
       canActivate: [AdminGuard]
@@ -47,6 +49,15 @@ const routes: Routes = [
     {
       path: "brand",
       component: BrandComponent,
+      canActivate: [AdminGuard]
+    }, {
+      path: "brand/add",
+      component: AddBrandComponent,
+      canActivate: [AdminGuard]
+    },
+    {
+      path: "brand/edit/:id",
+      component: EditBrandComponent,
       canActivate: [AdminGuard]
     }]
   },
