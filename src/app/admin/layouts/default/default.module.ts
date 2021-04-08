@@ -14,11 +14,12 @@ import { BrandComponent } from '../../modules/brand/brand.component';
 import { AddBrandComponent } from '../../modules/brand/add-brand/add-brand.component';
 import { EditBrandComponent } from '../../modules/brand/edit-brand/edit-brand.component';
 import { ConfirmdialogComponent } from '../../shared/components/confirmdialog/confirmdialog.component';
+import { SpinnerOverlayComponent } from '../../shared/components/spinner-overlay/spinner-overlay.component';
 
 
 
 @NgModule({
-  declarations: [DefaultComponent, DashboardComponent, PostsComponent,VehicleComponent, BrandComponent, AddBrandComponent, EditBrandComponent, ConfirmdialogComponent],
+  declarations: [DefaultComponent, DashboardComponent, PostsComponent,VehicleComponent, BrandComponent, AddBrandComponent, EditBrandComponent, ConfirmdialogComponent, SpinnerOverlayComponent],
   imports: [
     CommonModule,
     RouterModule,
