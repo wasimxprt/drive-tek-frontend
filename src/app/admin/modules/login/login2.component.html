@@ -1,0 +1,83 @@
+<div class="auth-page">
+    <div class="auth-page__content-block">
+        <div class="auth-page__content-wrapper">
+            <mat-tab-group class="auth-page__group">
+                <mat-tab label="Login">
+                    <h4 class="auth-page__group-title">Good Morning, User</h4>
+                    <div class="auth-page__google-button-wrapper">
+                        <button mat-raised-button class="auth-page__google-button">
+              <img class="auth-page__google-button-icon" src="../../../../assets/img/google.svg" alt="google">Sign in with Google
+            </button>
+                    </div>
+
+                    <div class="auth-page__border-wrapper">
+                        <div class="auth-page__border-line"></div>
+                        <p class="auth-page__border-title">or</p>
+                        <div class="auth-page__border-line"></div>
+                    </div>
+
+                    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+                        <mat-card-content>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Email" formControlName="email">
+
+                                <mat-error *ngIf="errorHandling('email', 'required')">
+                                    You must provide <strong>Email</strong>
+                                </mat-error>
+                                <mat-error *ngIf="errorHandling('email', 'email')">
+                                    You must provide a valid <strong>Email</strong>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="example-full-width">
+
+                                <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+
+                                <mat-error *ngIf="errorHandling('password', 'required')">
+                                    You must provide <strong>Password</strong>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <div class="form-actions">
+                                <button class="form-actions__login" mat-raised-button color="primary" type="submit">Login</button>
+                                <button class="form-actions__forget" mat-button>Forget password</button>
+                            </div>
+                        </mat-card-content>
+                    </form>
+
+
+
+                </mat-tab>
+                <mat-tab label="New User">
+                    <h4 class="auth-page__group-title">Welcome!</h4>
+                    <p class="auth-page__group-sub-title">Create you account</p>
+
+
+
+                    <div class="auth-page__border-wrapper">
+                        <div class="auth-page__border-line"></div>
+                        <p class="auth-page__border-title">or</p>
+                        <div class="auth-page__border-line"></div>
+                    </div>
+
+                    <div class="auth-page__google-button-wrapper">
+                        <button mat-raised-button class="auth-page__google-button">
+              <img class="auth-page__google-button-icon" src="../../../../assets/img/google.svg" alt="google">Sign in with Google
+            </button>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+            <p class="auth-page__footer-title">© 2014-2021 <a href="https://drivetek.com/">Drivetek</a>, LLC. All rights reserved.</p>
+
+        </div>
+    </div>
+    <div class="auth-page__logo">
+        <div class="auth-page__logo-wrapper">
+            <img class="auth-page__logo-img" src="../../../../assets/img/logo-removebg-preview (1).png" alt="logo">
+            <!-- <h6 class="auth-page__logo-title">Drivetek</h6> -->
+        </div>
+    </div>
+</div>

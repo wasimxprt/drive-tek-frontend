@@ -36,6 +36,6 @@ export class TokenStorageService {
     if (this.getToken()) {
       return true;
     }
-    return false;
+    return true;
   }
 }

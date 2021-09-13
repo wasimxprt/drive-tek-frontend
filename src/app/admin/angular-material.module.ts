@@ -32,7 +32,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { TrendModule } from 'ngx-trend';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 
 const materialModules = [
@@ -68,7 +72,10 @@ const materialModules = [
   MatGridListModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatTooltipModule
+  MatTooltipModule,
+  NgxEchartsModule,
+  TrendModule,
+  MatProgressBarModule
 ];
 
 @NgModule({

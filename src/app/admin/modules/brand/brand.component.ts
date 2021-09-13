@@ -20,7 +20,7 @@ const ELEMENT_DATA: BrandElement[] = [
 @Component({
   selector: 'app-brand',
   templateUrl: './brand.component.html',
-  styleUrls: ['./brand.component.css']
+  styleUrls: ['./brand.component.scss']
 })
 export class BrandComponent implements OnInit {
 

@@ -22,11 +22,13 @@ import { EditBrandComponent } from './modules/brand/edit-brand/edit-brand.compon
 const routes: Routes = [
   {
     path: "",
-    component: DefaultComponent,
+    // component: DefaultComponent,
     children: [{
       path: "dashboard",
+      pathMatch: 'full',
+      canActivate: [AdminGuard],
       component: DashboardComponent,
-      canActivate: [AdminGuard]
+
     }, {
       path: "users",
       component: UsersComponent,

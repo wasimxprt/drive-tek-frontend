@@ -2,10 +2,14 @@ import { AngularMaterialModule } from '../../angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from '../../modules/dashboard/dashboard.component';
+import { VisitsChartComponent } from '../../modules/dashboard/visits-chart/visits-chart.component';
+import { PerformanceChartComponent } from '../../modules/dashboard/performance-chart/performance-chart.component';
+import { RevenueChartComponent } from '../../modules/dashboard/revenue-chart/revenue-chart.component';
+import { ServerChartComponent } from '../../modules/dashboard/server-chart/server-chart.component';
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from '../../modules/posts/posts.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -19,7 +23,7 @@ import { SpinnerOverlayComponent } from '../../shared/components/spinner-overlay
 
 
 @NgModule({
-  declarations: [DefaultComponent, DashboardComponent, PostsComponent,VehicleComponent, BrandComponent, AddBrandComponent, EditBrandComponent, ConfirmdialogComponent, SpinnerOverlayComponent],
+  declarations: [DefaultComponent, DashboardComponent, VisitsChartComponent, PerformanceChartComponent, RevenueChartComponent, ServerChartComponent, PostsComponent, VehicleComponent, BrandComponent, AddBrandComponent, EditBrandComponent, ConfirmdialogComponent, SpinnerOverlayComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -29,6 +33,9 @@ import { SpinnerOverlayComponent } from '../../shared/components/spinner-overlay
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+  ],
+  exports: [
+    DefaultComponent
   ]
 })
 export class DefaultModule { }

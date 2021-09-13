@@ -1,9 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../../_services/data/data.service';
+import { DashboardService } from '../../_services/dashboard/dashboard.service';
 import { Post } from '../../_interface/Post';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
+
+import {
+  VisitsChartData,
+  PerformanceChartData,
+  RevenueChartData,
+  ServerChartData,
+} from '../../_models/dashboard';
+
+
 
 export interface PeriodicElement {
   name: string;
@@ -28,16 +38,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
   // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   // dataSource = ELEMENT_DATA;
 
-  constructor(private dataService: DataService) { }
+  public visitsChartData$: Observable<VisitsChartData>;
+  public performanceChartData$: Observable<PerformanceChartData>;
+  public revenueChartData$: Observable<RevenueChartData>;
+  public serverChartData$: Observable<ServerChartData>;
+
+  constructor(private dataService: DataService, private dashboardService: DashboardService) {
+    this.visitsChartData$ = this.dashboardService.loadVisitsChartData();
+    this.performanceChartData$ = this.dashboardService.loadPerformanceChartData();
+    this.revenueChartData$ = this.dashboardService.loadRevenueChartData();
+    this.serverChartData$ = this.dashboardService.loadServerChartData();
+  }
 
   ngOnInit(): void {
+    console.log("called dash");
   }
 
   displayedColumns = ['date_posted', 'title', 'category', 'delete'];

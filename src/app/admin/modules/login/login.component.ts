@@ -8,8 +8,8 @@ import { TokenStorageService } from '../../_services/token-storage/token-storage
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['../../layouts/loginlayout/loginlayout/loginlayout.component.scss']
+  templateUrl: './login2.component.html',
+  styleUrls: ['./login2.scss']
 })
 export class LoginComponent implements OnInit {
 
