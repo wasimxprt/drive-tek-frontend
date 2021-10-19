@@ -1,0 +1,9 @@
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: green;
+}
+
+.mat-progress-spinner path,
+.mat-spinner path {
+    stroke: red;
+}
