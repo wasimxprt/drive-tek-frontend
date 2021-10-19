@@ -8,21 +8,13 @@ import { TokenStorageService } from '../../_services/token-storage/token-storage
 
 @Component({
   selector: 'app-login',
-<<<<<<< HEAD
   templateUrl: './login.component.html',
   styleUrls: ['./login.scss']
-=======
-  templateUrl: './login2.component.html',
-  styleUrls: ['./login2.scss']
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
 })
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-<<<<<<< HEAD
   signUpForm: FormGroup;
-=======
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
   hide = true;
   loading = false;
   isLoggedIn = false;
@@ -50,20 +42,16 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
-<<<<<<< HEAD
     });
     this.signUpForm = this.fb.group({
       fname: ['', [Validators.required]],
       lname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-=======
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
     })
   }
 
   /* Handle form errors in Angular 8 */
-<<<<<<< HEAD
   public errorHandling = (control: string, error: string, formType: string) => {
     if (formType === 'login') {
       return this.loginForm.controls[control].hasError(error);
@@ -75,13 +63,6 @@ export class LoginComponent implements OnInit {
   }
 
   submitLoginForm() {
-=======
-  public errorHandling = (control: string, error: string) => {
-    return this.loginForm.controls[control].hasError(error);
-  }
-
-  submitForm() {
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
 
     if (this.loginForm.invalid) {
       return;

@@ -24,11 +24,7 @@ import { SpinnerOverlayComponent } from '../../shared/components/spinner-overlay
 
 
 @NgModule({
-<<<<<<< HEAD
   declarations: [DefaultComponent, DashboardComponent, VisitsChartComponent, PerformanceChartComponent, RevenueChartComponent, DailyLineChartComponent, ServerChartComponent, PostsComponent, VehicleComponent, BrandComponent, AddBrandComponent, EditBrandComponent, ConfirmdialogComponent, SpinnerOverlayComponent],
-=======
-  declarations: [DefaultComponent, DashboardComponent, VisitsChartComponent, PerformanceChartComponent, RevenueChartComponent, ServerChartComponent, PostsComponent, VehicleComponent, BrandComponent, AddBrandComponent, EditBrandComponent, ConfirmdialogComponent, SpinnerOverlayComponent],
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
   imports: [
     CommonModule,
     RouterModule,

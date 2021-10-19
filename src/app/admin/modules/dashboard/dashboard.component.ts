@@ -50,20 +50,14 @@ export class DashboardComponent implements OnInit {
   public performanceChartData$: Observable<PerformanceChartData>;
   public revenueChartData$: Observable<RevenueChartData>;
   public serverChartData$: Observable<ServerChartData>;
-<<<<<<< HEAD
   public dailyLineChartData$: Observable<DailyLineChartData>;
-=======
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
 
   constructor(private dataService: DataService, private dashboardService: DashboardService) {
     this.visitsChartData$ = this.dashboardService.loadVisitsChartData();
     this.performanceChartData$ = this.dashboardService.loadPerformanceChartData();
     this.revenueChartData$ = this.dashboardService.loadRevenueChartData();
     this.serverChartData$ = this.dashboardService.loadServerChartData();
-<<<<<<< HEAD
     this.dailyLineChartData$ = this.dashboardService.loadDailyLineChartData();
-=======
->>>>>>> 1e7b80afdb99bc68be7d7272657dd2f6557011d3
   }
 
   ngOnInit(): void {
